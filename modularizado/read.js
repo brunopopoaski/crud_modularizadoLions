@@ -4,7 +4,7 @@ function listandoFuncionario(lista) {
 
     lista.forEach((element, index) => {
 
-        console.log(`\nID: ${index+1} || Nome: ${element.nome} | Cargo: ${element.cargo} | Salário: ${element.salario}\n`)
+        console.log(`\nID: ${element.id} || Nome: ${element.nome} | E-mail: ${element.email} | Telefones: ${element.listaTelefonica}\n`)
 
     })
 }

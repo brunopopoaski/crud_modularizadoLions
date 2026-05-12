@@ -1,4 +1,4 @@
-const { ordenandoInputs } = require('./cadastro.js')
+const { ordenandoInputs, listaDeCadastrados } = require('./cadastro.js')
 const { listandoFuncionario, maiorSalario, menorSalario } = require('./read.js')
 const {questaoNome, questaoEmail, questaoListaDeTelefone} = require('./texts.js')
 
@@ -19,7 +19,7 @@ function exibirMenu(rl, voltarMenu) {
             ordenandoInputs(rl, voltarMenu, questaoNome, questaoEmail, questaoListaDeTelefone[0], questaoListaDeTelefone[1])
           break
         case 2:
-          listandoFuncionario(listaFuncionarios)
+          listandoFuncionario(listaDeCadastrados)
           voltarMenu()
           break
         case 3:
