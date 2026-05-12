@@ -7,25 +7,25 @@ function ordenandoInputs(rl, voltarMenu, questaoNome, questaoEmail, questaoTelef
         const nomeUsuario = input
         rl.question(`${questaoEmail}: `, input => {
             const nomeEmail = input
-            inputCadastroTelefone(rl, questaoTelefone, questaoOutroTelefone, nomeUsuario, nomeEmail)
+            inputCadastroTelefone(rl, questaoTelefone, questaoOutroTelefone, nomeUsuario, nomeEmail, voltarMenu)
         })
 
     })
 
 }
 
-function inputCadastroTelefone(rl, questao, questao2, nomeUsuario, nomeEmail) {
+function inputCadastroTelefone(rl, questao, questao2, nomeUsuario, nomeEmail, voltarMenu) {
     rl.question(`${questao}`, input => {
         listaDosTelefones.push(input)
-        inputOutroNumero(rl, listaDosTelefones, questao2, questao,  nomeUsuario, nomeEmail)
+        inputOutroNumero(rl, listaDosTelefones, questao2, questao,  nomeUsuario, nomeEmail, voltarMenu)
     })
 }
 
-function inputOutroNumero(rl, listaDosTelefones, questao2, questao, nomeUsuario, nomeEmail) {
+function inputOutroNumero(rl, listaDosTelefones, questao2, questao, nomeUsuario, nomeEmail, voltarMenu) {
     rl.question(`${questao2}`, input2 => {
         let number = Number(input2)
         if (number === 1) {
-            return inputCadastroTelefone(rl, questao, questao2, nomeUsuario, nomeEmail)
+            return inputCadastroTelefone(rl, questao, questao2, nomeUsuario, nomeEmail, voltarMenu)
         } else {
             const objCadastro = {
                 id: Date.now(),
@@ -35,11 +35,11 @@ function inputOutroNumero(rl, listaDosTelefones, questao2, questao, nomeUsuario,
             }
         listaDeCadastrados.push(objCadastro)
 
-        console.log(listaDeCadastrados);
+        voltarMenu()
         }
     })
 }
 
 
 
-module.exports = { ordenandoInputs }
+module.exports = { ordenandoInputs, listaDeCadastrados }
