@@ -1,6 +1,4 @@
-
 const listaDeCadastrados = []
-let listaTelefones = []
 const listaDosTelefones = []
 
 function ordenandoInputs(rl, voltarMenu, questaoNome, questaoEmail, questaoTelefone, questaoOutroTelefone) {
@@ -9,35 +7,35 @@ function ordenandoInputs(rl, voltarMenu, questaoNome, questaoEmail, questaoTelef
         const nomeUsuario = input
         rl.question(`${questaoEmail}: `, input => {
             const nomeEmail = input
-            listaTelefones = inputCadastroTelefone(rl, questaoTelefone, questaoOutroTelefone)
+            inputCadastroTelefone(rl, questaoTelefone, questaoOutroTelefone, nomeUsuario, nomeEmail)
         })
+
     })
-
-
-
-
-
-
 
 }
 
-
-
-function inputCadastroTelefone(rl, questao, questao2) {
+function inputCadastroTelefone(rl, questao, questao2, nomeUsuario, nomeEmail) {
     rl.question(`${questao}`, input => {
         listaDosTelefones.push(input)
-        console.log(listaDosTelefones);
-        inputOutroNumero(rl, listaDosTelefones, questao2, questao)
+        inputOutroNumero(rl, listaDosTelefones, questao2, questao,  nomeUsuario, nomeEmail)
     })
 }
 
-function inputOutroNumero(rl, listaDosTelefones, questao2, questao) {
+function inputOutroNumero(rl, listaDosTelefones, questao2, questao, nomeUsuario, nomeEmail) {
     rl.question(`${questao2}`, input2 => {
         let number = Number(input2)
         if (number === 1) {
-            return inputCadastroTelefone(rl, questao, questao2)
+            return inputCadastroTelefone(rl, questao, questao2, nomeUsuario, nomeEmail)
         } else {
-            return listaDosTelefones
+            const objCadastro = {
+                id: Date.now(),
+                nome: nomeUsuario,
+                email: nomeEmail,
+                listaTelefonica: listaDosTelefones
+            }
+        listaDeCadastrados.push(objCadastro)
+
+        console.log(listaDeCadastrados);
         }
     })
 }
