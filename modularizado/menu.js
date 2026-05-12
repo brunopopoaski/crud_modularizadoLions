@@ -1,4 +1,5 @@
 const { ordenandoInputs } = require('./cadastro.js')
+const { listandoFuncionario, maiorSalario, menorSalario } = require('./read.js')
 const {questaoNome, questaoEmail, questaoListaDeTelefone} = require('./texts.js')
 
 
