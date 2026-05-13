@@ -28,7 +28,7 @@ function inputOutroNumero(rl, listaDosTelefones, questao2, questao, nomeUsuario,
             return inputCadastroTelefone(rl, questao, questao2, nomeUsuario, nomeEmail, voltarMenu)
         } else {
             const objCadastro = {
-                id: Date.now(),
+                id: listaDeCadastrados.length +1,
                 nome: nomeUsuario,
                 email: nomeEmail,
                 listaTelefonica: listaDosTelefones
