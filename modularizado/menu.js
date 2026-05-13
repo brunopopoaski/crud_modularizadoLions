@@ -1,6 +1,7 @@
 const { ordenandoInputs, listaDeCadastrados } = require('./cadastro.js')
 const { listandoFuncionario, maiorSalario, menorSalario } = require('./read.js')
 const {questaoNome, questaoEmail, questaoListaDeTelefone} = require('./texts.js')
+const { exclusao } = require('./delete.js')
 
 
 function exibirMenu(rl, voltarMenu) {
@@ -23,10 +24,10 @@ function exibirMenu(rl, voltarMenu) {
           voltarMenu()
           break
         case 3:
-          maiorSalario(voltarMenu)
+          exclusao(rl, listaDeCadastrados, voltarMenu)
           break
         case 4:
-          menorSalario(voltarMenu)
+          
           break
         case 0:
           console.log('\nAté logo.\n')
