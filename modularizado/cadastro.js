@@ -1,3 +1,4 @@
+const { validandoEmail } = require('./validacao.js')
 const listaDeCadastrados = []
 const listaDosTelefones = []
 
@@ -7,7 +8,12 @@ function ordenandoInputs(rl, voltarMenu, questaoNome, questaoEmail, questaoTelef
         const nomeUsuario = input
         rl.question(`${questaoEmail}: `, input => {
             const nomeEmail = input
-            inputCadastroTelefone(rl, questaoTelefone, questaoOutroTelefone, nomeUsuario, nomeEmail, voltarMenu)
+            if (validandoEmail(nomeEmail, listaDeCadastrados)){
+                inputCadastroTelefone(rl, questaoTelefone, questaoOutroTelefone, nomeUsuario, nomeEmail, voltarMenu)
+            } else {
+                console.log('Email já cadastrado! tente novamente...');
+                voltarMenu()
+            }
         })
 
     })
@@ -35,7 +41,7 @@ function inputOutroNumero(rl, listaDosTelefones, questao2, questao, nomeUsuario,
             }
         listaDeCadastrados.push(objCadastro)
 
-        voltarMenu()
+        voltarMenu()                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
         }
     })
 }
