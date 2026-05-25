@@ -1,1 +1,15 @@
 {"level":"info","message":{"method":"GET","url":"/users"},"timestamp":"2026-05-25 19:28:07"}
+{"level":"info","message":{"method":"GET","url":"/users"},"timestamp":"2026-05-25 19:34:41"}
+{"level":"info","message":{"method":"POST","url":"/users"},"timestamp":"2026-05-25 19:35:10"}
+{"level":"info","message":{"method":"GET","url":"/users"},"timestamp":"2026-05-25 19:35:32"}
+{"level":"info","message":{"method":"PUT","url":"/users/1"},"timestamp":"2026-05-25 19:41:51"}
+{"level":"info","message":{"method":"PUT","url":"/users/1"},"timestamp":"2026-05-25 19:42:08"}
+{"level":"info","message":{"method":"PUT","url":"/users/1"},"timestamp":"2026-05-25 19:43:37"}
+{"level":"info","message":{"method":"GET","url":"/users"},"timestamp":"2026-05-25 19:43:43"}
+{"level":"info","message":{"method":"GET","url":"/users"},"timestamp":"2026-05-25 19:44:27"}
+{"level":"info","message":{"method":"PUT","url":"/users/1"},"timestamp":"2026-05-25 19:44:35"}
+{"level":"info","message":{"method":"GET","url":"/users"},"timestamp":"2026-05-25 19:44:37"}
+{"level":"info","message":{"method":"PUT","url":"/users/1"},"timestamp":"2026-05-25 19:52:03"}
+{"level":"info","message":{"method":"PUT","url":"/users/100"},"timestamp":"2026-05-25 19:52:23"}
+{"level":"info","message":{"method":"PUT","url":"/users/100"},"timestamp":"2026-05-25 19:52:42"}
+{"level":"info","message":{"method":"PUT","url":"/users/100"},"timestamp":"2026-05-25 19:53:28"}

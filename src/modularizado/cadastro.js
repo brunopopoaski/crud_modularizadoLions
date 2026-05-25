@@ -15,7 +15,7 @@ function criandoUser(body, res) {
         }
 
         listaDeUsuarios.push(objUser)
-        res.status(201).json({mensage: `usuario ${body.nome} criado com sucesso`})
+        return res.status(201).json({mensage: `usuario ${body.nome} criado com sucesso`})
     }
 
 }
