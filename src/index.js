@@ -4,6 +4,7 @@ import criandoUser from "./modularizado/cadastro.js"
 import editandoUser from "./modularizado/update.js";
 import deleteUser from "./modularizado/delete.js"
 import logMiddleware from "./middleware/logger.js"
+import validacaoEmail from "./modularizado/validacoes.js";
 
 const app = express()
 const port = 3000
@@ -17,7 +18,8 @@ app.get('/users', (req, res) => {
 
 app.post('/users', (req, res) => {
   const body = req.body
-  criandoUser(body, res)
+  const emailvalidado = validacaoEmail(body.email)
+  criandoUser(body, res, emailvalidado)
 })
 
 app.put('/users/:id', (req, res) => {
