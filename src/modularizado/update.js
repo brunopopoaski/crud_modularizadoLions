@@ -1,10 +1,10 @@
 import listaDeUsuarios  from "../data/userData.js";
 
-export default function editandoUser(id, body, res) {
+export default function editandoUser(id, body, res, retornoVerificacao) {
     
     const usuarioEditado = listaDeUsuarios.find(element => element.id == id)
 
-    if(usuarioEditado === -1 || usuarioEditado === undefined){
+    if(usuarioEditado === -1 || usuarioEditado === undefined || retornoVerificacao){
         return res.status(400).json({mensage: "Usuario não encontrado! tente novamente..."})
     } else {
         usuarioEditado.nome = body.nome || usuarioEditado.nome

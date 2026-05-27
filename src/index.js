@@ -1,4 +1,6 @@
 import express from "express";
+import mongoose from "mongoose";
+
 import listaDeUsuarios  from "./data/userData.js";
 import criandoUser from "./modularizado/cadastro.js"
 import editandoUser from "./modularizado/update.js";
@@ -8,6 +10,18 @@ import validacaoEmail from "./modularizado/validacoes.js";
 
 const app = express()
 const port = 3000
+
+mongoose.connect(
+  `mongodb+srv://brunomeida27_db_user:aPsRGePREmxcF1Uf@lionsdev.fq1qgzn.mongodb.net/`
+)
+
+mongoose.connection.once(`open`, () => {
+  console.log(`Conectado ao DB`);
+})
+
+mongoose.connection?.on(`error`, () =>{
+  console.error(`Erro ao conectar ao DB, Error: ${err.mensage}`)
+})
 
 app.use(express.json())
 app.use(logMiddleware)
@@ -25,7 +39,8 @@ app.post('/users', (req, res) => {
 app.put('/users/:id', (req, res) => {
   const id = req.params.id
   const body = req.body
-  editandoUser(id, body, res)
+  const emailvalidado = validacaoEmail(body.email)
+  editandoUser(id, body, res, emailvalidado)
 })
 
 app.delete('/users/:id', (req, res) => {
@@ -36,3 +51,7 @@ app.delete('/users/:id', (req, res) => {
 app.listen(port, () =>{
   console.log(`Server rodando na porta ${port}`);
 })
+
+
+//aPsRGePREmxcF1Uf
+//mongodb+srv://brunomeida27_db_user:aPsRGePREmxcF1Uf@lionsdev.fq1qgzn.mongodb.net/
