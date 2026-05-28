@@ -1,9 +1,8 @@
 
 import listaDeUsuarios  from "../data/userData.js";
 
-function criandoUser(body, res) {
-
-    if(!body.nome || !body.email || !body.listaTelefonica){
+function criandoUser(body, res, resultadoValidacao) {
+    if(!body.nome || !body.email || !body.listaTelefonica || !resultadoValidacao){
         return res.status(400).json("Digite todos os usuarios corretamente!")
     } else {
         const objUser =
