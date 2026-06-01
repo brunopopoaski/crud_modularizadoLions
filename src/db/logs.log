@@ -79,3 +79,9 @@
 {"level":"info","message":{"method":"GET","url":"/users"},"timestamp":"2026-05-28 20:57:23"}
 {"level":"info","message":{"method":"PATCH","url":"/users/6a18c3fb57153b1afa04aa1f"},"timestamp":"2026-05-28 21:08:48"}
 {"level":"info","message":{"method":"GET","url":"/users/6a18c3fb57153b1afa04aa1f"},"timestamp":"2026-05-28 21:08:54"}
+{"level":"info","message":{"method":"GET","url":"/users"},"timestamp":"2026-06-01 18:52:11"}
+{"level":"info","message":{"method":"PUT","url":"/users/6a18c3fb57153b1afa04aa1f"},"timestamp":"2026-06-01 18:52:40"}
+{"level":"info","message":{"method":"PATCH","url":"/users/6a18c3fb57153b1afa04aa1f"},"timestamp":"2026-06-01 18:55:33"}
+{"level":"info","message":{"method":"GET","url":"/users/6a18c3fb57153b1afa04aa1f"},"timestamp":"2026-06-01 18:55:46"}
+{"level":"info","message":{"method":"PATCH","url":"/users/6a18c3fb57153b1afa04aa1f"},"timestamp":"2026-06-01 18:55:56"}
+{"level":"info","message":{"method":"PATCH","url":"/users/6a18c3fb57153b1afa04aa1f"},"timestamp":"2026-06-01 18:56:19"}

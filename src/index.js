@@ -1,13 +1,13 @@
 import express from "express";
 import mongoose from "mongoose";
+import { env } from "./config/env.config.js"
 
 import logMiddleware from "./middleware/logger.js"
-import { createUserService, getAllUsersService, getUserByIDService, updateUserByIdService, deleteUserByIdService,  } from "./service/user.service.js";
+import { createUserService, getAllUsersService, getUserByIDService, updateUserByIdService, deleteUserByIdService, updateUserByIdPropService } from "./service/user.service.js";
 const app = express()
-const port = 3000
 
 mongoose.connect(
-  `mongodb+srv://brunomeida27_db_user:0Bnlu7txWgaP2eD1@lionsdev.fq1qgzn.mongodb.net/dblions`
+  `mongodb+srv://${env.app_user}:${env.app_password}@lionsdev.fq1qgzn.mongodb.net/dblions`
 )
 
 mongoose.connection.once(`open`, () => {
@@ -60,7 +60,7 @@ app.put('/users/:id', async (req, res) => {
   }
 })
 
-app.patch('/users/:id', async (req, res) => {
+app.patch('/users/nome/:id', async (req, res) => {
   try {
     const id = req.params.id
     const body = req.body
@@ -81,10 +81,6 @@ app.delete('/users/:id', async (req, res) => {
   }
 })
 
-app.listen(port, () => {
-  console.log(`Server rodando na porta ${port}`);
+app.listen(env.app_port, () => {
+  console.log(`Server rodando corretamente`);
 })
-
-
-//aPsRGePREmxcF1Uf
-//mongodb+srv://brunomeida27_db_user:aPsRGePREmxcF1Uf@lionsdev.fq1qgzn.mongodb.net/
