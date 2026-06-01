@@ -1,5 +1,5 @@
 
-import listaDeUsuarios  from "../data/userData.js";
+/* import listaDeUsuarios  from "../data/userData.js"; */
 
 function criandoUser(body, res, resultadoValidacao) {
     if(!body.nome || !body.email || !body.listaTelefonica || !resultadoValidacao){

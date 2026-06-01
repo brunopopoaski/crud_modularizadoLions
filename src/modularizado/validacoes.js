@@ -1,5 +1,5 @@
 import { z } from "zod"
-import listaDeUsuarios from "../data/userData.js";
+/* import listaDeUsuarios from "../data/userData.js"; */
 
 export default function validacaoEmail(email) {
 

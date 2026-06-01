@@ -1,4 +1,4 @@
-import listaDeUsuarios  from "../data/userData.js";
+/* import listaDeUsuarios  from "../data/userData.js"; */
 
 export default function editandoUser(id, body, res, retornoVerificacao) {
     
